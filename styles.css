@@ -1,30 +1,55 @@
-body{
-  margin: 0px;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding-top: 60px; /* prevents content from hiding behind navbar i guess */
 }
-main{
-  matgin: 2px;
-}
-h1{
-  text-align: center;
 
-.navbar ul{
-  list-style-type: none;
-  background-color: hsl(0, 0%, 25%);
-  padding: 0px;
-  margin: 0px;
-  oveflow: hidden;
+h1 {
+    text-align: center;
 }
-.navbar a{
-  color: white;
-  text-decoration: none;
-  padding: 20px;
-  display: block;
-  text-align: center;
+
+main {
+    margin: 10px;
 }
-.navbar a:hover{
-  background-color: white;
-  color: black;
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: hsl(0, 0%, 25%);
+    z-index: 1000;
 }
-navbar li{
-  float: left;
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    margin: 0;
+}
+
+.navbar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 18px 24px;
+    transition: 0.2s;
+}
+
+.navbar a:hover {
+    background-color: white;
+    color: black;
+}
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
 }
