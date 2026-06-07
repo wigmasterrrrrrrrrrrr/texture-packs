@@ -1,22 +1,48 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Java's Texture Packs</title>
-    <link rel="stylesheet" href="styles.css">
+
+<link rel="stylesheet" href="styles.css">
+<script src="redirect.js"></script>
+
 </head>
 <body>
 
-    <h1>texture packs</h1>
 
-    <nav class="navbar">
-        <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="texturepacks.html">Texture Packs</a></li>
-            <li><a href="https://github.com/wigmasterrrrrrrrrrrr/texture-packs">GitHub</a></li>
-        </ul>
-    </nav>
-  
+<nav class="navbar">
+    <ul>
+        <li><a href="#" onclick="goToPage('home.html'); return false;">Home</a></li>
+        <li><a href="#" onclick="goToPage('texturepacks.html'); return false;">Texture Packs</a></li>
+        <li><a href="#" onclick="goToPage('about.html'); return false;">About</a></li>
+        <li><a href="https://github.com/wigmasterrrrrrrrrrrr/texture-packs" target="_blank">GitHub</a></li>
+    </ul>
+</nav>
+
+<main>
+    <section class="hero">
+        <h1>Java's Texture Packs</h1>
+        <p>
+           
+        </p>
+    </section>
+
+    <section class="featured">
+        <h2>Featured Pack</h2>
+        <div class="card">
+            <h3>Example Texture Pack</h3>
+           
+            <button onclick="goToPage('texturepacks.html')">
+                View Packs
+            </button>
+        </div>
+    </section>
+</main>
+
+
 </body>
 </html>
+
