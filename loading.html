@@ -7,6 +7,7 @@
 
   <link rel="stylesheet" href="load.css">
 </head>
+
 <body>
 
   <div class="spinner-container">
@@ -16,59 +17,21 @@
   </div>
 
   <script>
-    // -----------------------------
-    // your redirect system (keep this)
-    // -----------------------------
-    const params = new URLSearchParams(window.location.search);
-    const target = params.get("target");
+    document.addEventListener("DOMContentLoaded", () => {
+        const params = new URLSearchParams(window.location.search);
+        const target = params.get("target");
 
-    setTimeout(() => {
-      if (target) window.location.replace(target);
-    }, 800);
+     
+        if (!target) {
+            document.body.innerHTML = "<h2>No page specified</h2>";
+            return;
+        }
 
-    // -----------------------------
-    // SVG generator (created in JS)
-    // -----------------------------
-    function generateSVG() {
-      return `
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
-  <circle cx="25" cy="25" r="20"
-          fill="none"
-          stroke="black"
-          stroke-width="5"
-          stroke-linecap="round"/>
-</svg>`;
-    }
-
-    // -----------------------------
-    // download helper
-    // -----------------------------
-    function downloadSVG() {
-      const svg = generateSVG();
-      const blob = new Blob([svg], { type: "image/svg+xml" });
-      const url = URL.createObjectURL(blob);
-
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "loading-svg.svg";
-
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-
-      URL.revokeObjectURL(url);
-    }
-
-    // -----------------------------
-    // Ctrl + Z trigger
-    // -----------------------------
-    document.addEventListener("keydown", (e) => {
-      if (e.ctrlKey && e.key.toLowerCase() === "z") {
-        e.preventDefault();
-        downloadSVG();
-      }
+ 
+        setTimeout(() => {
+            window.location.replace(target);
+        }, 800);
     });
-
   </script>
 
 </body>
