@@ -1,0 +1,49 @@
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.spinner {
+  animation: rotate 2s linear infinite;
+  width: 50px;
+  height: 50px;
+}
+
+.spinner .path {
+  stroke: #4285F4; /* Google Blue */
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite, colorChange 6s ease-in-out infinite;
+}
+
+/* Overall container rotation */
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Expanding and contracting circle stroke */
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
+/* Multi-color shifting cycle */
+@keyframes colorChange {
+  0%, 100% { stroke: #4285F4; } /* Blue */
+  25%          { stroke: #EA4335; } /* Red */
+  50%          { stroke: #FBBC05; } /* Yellow */
+  75%          { stroke: #34A853; } /* Green */
+}
