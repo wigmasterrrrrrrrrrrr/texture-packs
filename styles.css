@@ -140,6 +140,7 @@ main {
 
 button {
     background: transparent;
+    background-color: transparent;
     border: 8px solid;
     border-image-source: url('button.png');
     border-image-slice: 8;
