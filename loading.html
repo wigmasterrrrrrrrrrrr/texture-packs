@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading...</title>
 
   <link rel="stylesheet" href="load.css">
-
-  <title>Loading...</title>
 </head>
+
 <body>
 
   <div class="spinner-container">
@@ -15,6 +15,23 @@
       <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
     </svg>
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const params = new URLSearchParams(window.location.search);
+        const target = params.get("target");
+
+        if (!target) {
+            document.body.innerHTML = "<h2>No page specified</h2>";
+            return;
+        }
+
+    
+        setTimeout(() => {
+            window.location.replace(target);
+        }, 800);
+    });
+  </script>
 
 </body>
 </html>
