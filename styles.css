@@ -60,6 +60,7 @@ p {
     overflow: hidden;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     flex-wrap: wrap;
 }
 
@@ -68,12 +69,22 @@ p {
     border-right: 1px solid var(--border-dark);
 }
 
+.navbar li:last-child {
+    border-right: none;
+}
+
 .navbar a {
     display: block;
     color: var(--primary-color);
-    text-decoration: underline;
-    padding: 8px 12px;
+    text-decoration: none;
+    padding: 8px 14px;
     font-size: 0.9rem;
+}
+
+.navbar a.active,
+.navbar a:hover {
+    text-decoration: underline;
+    color: #000080;
 }
 
 .navbar a:visited {
@@ -81,9 +92,9 @@ p {
 }
 
 main {
-    max-width: 100%;
-    margin: 0;
-    padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px;
 }
 
 .hero {
@@ -127,50 +138,81 @@ button {
     background: var(--background);
     border: 2px solid;
     border-color: var(--border-light) var(--border-dark) var(--border-dark) var(--border-light);
-    padding: 4px 12px;
+    padding: 6px 14px;
     color: var(--text-color);
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     cursor: pointer;
     font-family: "MS Sans Serif", Arial, sans-serif;
 }
 
 button:hover {
     border-color: var(--border-dark) var(--border-light) var(--border-light) var(--border-dark);
+    background: #e0e0ff;
 }
 
 button:active {
     border-color: var(--border-dark) var(--border-light) var(--border-light) var(--border-dark);
-    padding: 5px 11px 3px 13px;
+    padding: 7px 13px 5px 15px;
+}
+
+.card {
+    background: linear-gradient(180deg, #ededed 0%, #d1d1d1 100%);
+    border: 2px solid;
+    border-color: var(--border-light) var(--border-dark) var(--border-dark) var(--border-light);
+    padding: 16px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.12);
+}
+
+.card-head {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.card-icon {
+    width: 52px;
+    height: 52px;
+    border: 2px solid var(--border-dark);
+    background: white;
+    padding: 4px;
+}
+
+.meta {
+    font-size: 0.85rem;
+    color: #3a3a3a;
+    margin: 0;
 }
 
 .packs-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
     margin-top: 20px;
 }
 
 @media (max-width: 768px) {
     h1 {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }
 
     h2 {
-        font-size: 1.25rem;
+        font-size: 1.35rem;
     }
 
     .navbar a {
-        padding: 8px 8px;
-        font-size: 0.8rem;
+        padding: 8px 9px;
+        font-size: 0.82rem;
     }
 
     main {
-        padding: 10px;
+        padding: 14px;
     }
 
     .card {
-        padding: 8px;
+        padding: 12px;
     }
 
     .packs-grid {

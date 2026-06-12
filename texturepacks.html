@@ -12,11 +12,10 @@
 </head>
 <body>
 
-
 <nav class="navbar">
     <ul>
         <li><a href="#" onclick="goToPage('home.html'); return false;">Home</a></li>
-        <li><a href="#" onclick="goToPage('texturepacks.html'); return false;">Texture Packs</a></li>
+        <li><a class="active" href="#" onclick="goToPage('texturepacks.html'); return false;">Texture Packs</a></li>
         <li><a href="#" onclick="goToPage('about.html'); return false;">About</a></li>
         <li><a href="https://github.com/wigmasterrrrrrrrrrrr/texture-packs" target="_blank">GitHub</a></li>
     </ul>
@@ -25,49 +24,48 @@
 <main>
     <section class="hero">
         <h1>Texture Packs</h1>
-        <p>Explore our collection of texture packs for Minecraft</p>
+        <p>Explore our collection of texture packs for Minecraft with a crisp classic interface.</p>
     </section>
 
     <section class="featured">
         <h2>Available Packs</h2>
         <div class="packs-grid">
-            <div class="card">
-                <h3>Pack 1</h3>
-                <p>coming soon.</p>
+            <article class="card">
+                <div class="card-head">
+                    <img src="images/static/mark.png" alt="Pack icon" class="card-icon">
+                    <div>
+                        <h3>Pack 1</h3>
+                        <p class="meta">Classic textures — coming soon.</p>
+                    </div>
+                </div>
+                <p>Retro-inspired textures with a clean Java-style finish.</p>
                 <button onclick="alert('no texture packs available!')">Download</button>
-            </div>
-            <div class="card">
-                <h3>coming soon</h3>
-                <p>experience.</p>
+            </article>
+            <article class="card">
+                <div class="card-head">
+                    <img src="images/static/mark.png" alt="Pack icon" class="card-icon">
+                    <div>
+                        <h3>Coming Soon</h3>
+                        <p class="meta">Experience the style.</p>
+                    </div>
+                </div>
+                <p>Keep an eye out for a polished update built for classic Minecraft visuals.</p>
                 <button onclick="alert('no texture packs available!')">Download</button>
-            </div>
-            <div class="card">
-                <h3>coming soon</h3>
-                <p>aesthetic.</p>
+            </article>
+            <article class="card">
+                <div class="card-head">
+                    <img src="images/static/mark.png" alt="Pack icon" class="card-icon">
+                    <div>
+                        <h3>Aesthetic</h3>
+                        <p class="meta">Crisp details, classic feel.</p>
+                    </div>
+                </div>
+                <p>Fresh textures with a retro UI accent that stays true to the source.</p>
                 <button onclick="alert('no texture packs available!')">Download</button>
-            </div>
+            </article>
         </div>
     </section>
 </main>
-    <section class="hero">
-        <h1>Java's Texture Packs</h1>
-        <p>
-           
-        </p>
-    </section>
-
-    <section class="featured">
-        <h2>Featured Pack</h2>
-        <div class="card">
-            <h3>Example Texture Pack</h3>
-           
-            <button onclick="goToPage('texturepacks.html')">
-                View Packs
-            </button>
-        </div>
-    </section>
-</main>
-
 
 </body>
 </html>
