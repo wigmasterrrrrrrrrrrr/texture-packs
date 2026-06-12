@@ -1,21 +1,62 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #c0c0c0;
+  color: #000;
+  font-family: "MS Sans Serif", Arial, sans-serif;
+}
+
+.loading-frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.loading-box {
+  width: min(100%, 340px);
+  background: #e5e5e5;
+  border: 4px solid #808080;
+  box-shadow: inset -1px -1px 0 #fff, inset 1px 1px 0 #404040;
+  padding: 26px;
+  text-align: center;
+  transition: opacity 0.32s ease, transform 0.32s ease;
+}
+
+.fade-out .loading-box {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
 .spinner-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  margin-bottom: 20px;
 }
 
 .spinner {
-  animation: rotate 2s linear infinite;
-  width: 50px;
-  height: 50px;
-  border-radius: 8px;
+  animation: rotate 1.8s linear infinite;
+  width: 52px;
+  height: 52px;
 }
 
 .spinner .path {
-  stroke: #4285F4; /* Google Blue */
+  stroke: #000080;
   stroke-linecap: round;
-  animation: dash 1.5s ease-in-out infinite, colorChange 6s ease-in-out infinite;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+.loading-copy h1 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+}
+
+.loading-copy p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #202020;
 }
 
 /* Overall container rotation */
@@ -39,12 +80,4 @@
     stroke-dasharray: 90, 150;
     stroke-dashoffset: -124;
   }
-}
-
-/* Multi-color shifting cycle */
-@keyframes colorChange {
-  0%, 100% { stroke: #4285F4; } /* Blue */
-  25%          { stroke: #EA4335; } /* Red */
-  50%          { stroke: #FBBC05; } /* Yellow */
-  75%          { stroke: #34A853; } /* Green */
 }

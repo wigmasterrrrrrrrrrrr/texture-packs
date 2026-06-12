@@ -9,28 +9,40 @@
 </head>
 
 <body>
-
-  <div class="spinner-container">
-    <svg class="spinner" viewBox="0 0 50 50">
-      <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
-    </svg>
+  <div class="loading-frame">
+    <div class="loading-box">
+      <div class="spinner-container">
+        <svg class="spinner" viewBox="0 0 50 50">
+          <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+        </svg>
+      </div>
+      <div class="loading-copy">
+        <h1>Loading...</h1>
+        <p class="loading-target">Preparing the next page.</p>
+      </div>
+    </div>
   </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-        const params = new URLSearchParams(window.location.search);
-        const target = params.get("target");
+      const params = new URLSearchParams(window.location.search);
+      const target = params.get("target");
 
-     
-        if (!target) {
-            document.body.innerHTML = "<h2>No page specified</h2>";
-            return;
-        }
+      const targetText = document.querySelector('.loading-target');
+      if (!target) {
+        document.body.innerHTML = '<h2>No page specified</h2>';
+        return;
+      }
 
- 
+      const pageName = target.replace('.html', '').replace(/\b\w/g, c => c.toUpperCase());
+      targetText.textContent = `Redirecting to ${pageName}...`;
+
+      setTimeout(() => {
+        document.body.classList.add('fade-out');
         setTimeout(() => {
-            window.location.replace(target);
-        }, 800);
+          window.location.replace(target);
+        }, 320);
+      }, 850);
     });
   </script>
 
